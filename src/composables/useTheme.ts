@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue';
 
 export default function useTheme() {
   const STORAGE_KEY = 'user-theme-preference';
@@ -11,6 +11,8 @@ export default function useTheme() {
       theme.value = event.matches ? 'dark' : 'light';
     }
   };
+
+  const isDark = computed(() => theme.value === 'dark');
 
   const toggleTheme = () => {
     theme.value = theme.value === 'dark' ? 'light' : 'dark';
@@ -37,5 +39,5 @@ export default function useTheme() {
     mediaQuery.removeEventListener('change', systemHandler);
   });
 
-  return { theme, toggleTheme, isDark: ref(theme.value === 'dark') };
+  return { theme, toggleTheme, isDark };
 }

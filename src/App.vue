@@ -1,8 +1,18 @@
 <script setup lang="ts">
-  import ThemeToggler from './components/ThemeToggler.vue';
+  import Header from './components/Header.vue';
+  import ExtensionList from './components/ExtensionList.vue';
 </script>
 
 <template>
-  <ThemeToggler />
-  <h2>browser extension manager ui</h2>
+  <main>
+    <Header />
+    <ExtensionList />
+  </main>
 </template>
+
+<style scoped>
+  main {
+    max-width: 78dvw;
+    margin: 36px auto;
+  }
+</style>
