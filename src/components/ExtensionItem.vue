@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import { type IExtension } from '@/types/extension';
-  import { ref, watchEffect } from 'vue';
+  import { computed, ref, watchEffect } from 'vue';
+
+  const BASE_URL = import.meta.env.BASE_URL;
 
   const props = defineProps<{
     extension: IExtension;
@@ -11,6 +13,12 @@
     (e: 'hide-extension', id: string): void;
   }>();
 
+  const logoPath = computed(() => {
+    const logo = props.extension.logo.startsWith('/')
+      ? props.extension.logo.slice(1)
+      : props.extension.logo;
+    return `${BASE_URL}${logo}`;
+  });
   const isActive = ref(props.extension.isActive);
   watchEffect(() => {
     isActive.value = props.extension.isActive;
@@ -29,7 +37,7 @@
   <div class="extension-item">
     <div class="upper-container">
       <img
-        :src="extension.logo"
+        :src="logoPath"
         :alt="`${extension.name} Logo`"
       />
       <div class="content-container">
