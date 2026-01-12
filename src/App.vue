@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import Header from '@/components/Header.vue';
   import ExtensionList from '@/components/ExtensionList.vue';
+  import Attribution from '@/components/Attribution.vue';
   import { onMounted } from 'vue';
   import { useExtensionStore } from './store/extension';
 
@@ -12,6 +13,7 @@
   <main>
     <Header />
     <ExtensionList />
+    <Attribution />
   </main>
 </template>
 

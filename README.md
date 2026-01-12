@@ -33,8 +33,9 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor Solution]()
-- Live Site URL: [Github Pages]()
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/browser-extension-manager-ui-8mkhyiTOWV
+)
+- Live Site URL: [Github Pages](https://sam4web.github.io/browser-extension-manager-ui)
 
 ## Built with
 
