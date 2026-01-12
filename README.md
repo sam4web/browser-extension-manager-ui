@@ -11,6 +11,7 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
 - [Built with](#built-with)
 - [Author](#author)
 
+
 ## Overview
 
 ### The challenge
