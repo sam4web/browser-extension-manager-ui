@@ -21,12 +21,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--neutral-800);
     padding: 10px 15px;
     border-radius: 16px;
-    box-shadow:
-      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: var(--neutral-0);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px;
+  }
+
+  .dark nav {
+    background-color: var(--neutral-800);
   }
 
   .logo {
@@ -37,9 +39,13 @@
   }
 
   .logo p {
-    color: var(--neutral-100);
-    font-weight: 600;
+    color: var(--neutral-800);
+    font-weight: 700;
     font-size: 24px;
     line-height: 32px;
+  }
+
+  .dark .logo p {
+    color: var(--neutral-100);
   }
 </style>

@@ -27,18 +27,31 @@
     cursor: pointer;
     outline-offset: 2px;
     outline: 2px solid transparent;
-    background-color: var(--neutral-700);
+    background-color: var(--neutral-100);
     transition:
       background-color 260ms linear,
       outline-color 200ms linear;
   }
 
+  .dark button {
+    background-color: var(--neutral-700);
+  }
+
   button:focus,
   button:hover {
+    background-color: var(--neutral-300);
+  }
+
+  .dark button:focus,
+  .dark button:hover {
     background-color: var(--neutral-600);
   }
 
   button:focus {
+    outline-color: var(--red-400);
+  }
+
+  .dark button:focus {
     outline-color: var(--red-500);
   }
 </style>

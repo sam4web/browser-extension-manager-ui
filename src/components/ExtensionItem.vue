@@ -36,13 +36,19 @@
 
 <style scoped>
   .extension-item {
-    background-color: var(--neutral-800);
     font-size: 16px;
     padding: 8px 18px;
-    border: 1px solid var(--neutral-600);
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    color: var(--neutral-100);
+    border: 1px solid var(--neutral-100);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 1.5px 1px;
+    color: var(--neutral-800);
     border-radius: 16px;
+    background-color: var(--neutral-0);
+  }
+
+  .dark .extension-item {
+    color: var(--neutral-100);
+    border-color: var(--neutral-600);
+    background-color: var(--neutral-800);
   }
 
   .extension-item .upper-container {
@@ -65,6 +71,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    color: var(--neutral-600);
+  }
+
+  .dark .extension-item .content-container p {
     color: var(--neutral-300);
   }
 
@@ -79,22 +89,38 @@
   .extension-item button {
     background-color: transparent;
     padding: 8px 15px;
-    transition:
-      color 200ms linear,
-      border-color 200ms linear,
-      background-color 240ms,
-      outline-color 180ms linear;
+    font-weight: 500;
+    opacity: 100%;
+    color: var(--neutral-800);
+  }
+
+  .dark .extension-item button {
+    color: var(--neutral-100);
   }
 
   .extension-item button:hover {
-    background-color: var(--red-400);
-    color: var(--neutral-900);
-    font-weight: 500;
-    border-color: var(--red-400);
+    background-color: var(--red-500);
+    border-color: var(--red-500);
+    color: var(--neutral-100);
   }
 
-  button:focus {
+  .dark .extension-item button:hover {
+    background-color: var(--red-400);
+    border-color: var(--red-400);
+    color: var(--neutral-800);
+  }
+
+  .extension-item button:focus {
+    color: var(--neutral-800);
+    background-color: var(--neutral-100);
+    border-color: var(--neutral-100);
+    outline-color: var(--red-700);
+  }
+
+  .dark .extension-item button:focus {
+    color: var(--neutral-100);
     background-color: var(--neutral-600);
+    border-color: var(--neutral-600);
     outline-color: var(--red-500);
   }
 
@@ -112,13 +138,17 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    background-color: var(--neutral-600);
+    background-color: var(--neutral-300);
     outline-offset: 2px;
     outline: 2px solid transparent;
     transition:
       background-color 260ms linear,
       outline-color 200ms linear,
       justify-content 270ms linear;
+  }
+
+  .dark .checkbox-box {
+    background-color: var(--neutral-600);
   }
 
   .checkbox-wrapper:focus-within .checkbox-box {
@@ -133,7 +163,15 @@
   }
 
   input:checked + .checkbox-box {
-    background-color: var(--red-500);
+    background-color: var(--red-700);
     justify-content: end;
+  }
+
+  .dark input:checked + .checkbox-box {
+    background-color: var(--red-400);
+  }
+
+  .checkbox-wrapper:hover input:checked + .checkbox-box {
+    background-color: var(--red-500);
   }
 </style>
