@@ -12,7 +12,7 @@
 
 <style scoped>
   main {
-    max-width: 78dvw;
+    max-width: 74dvw;
     margin: 36px auto;
   }
 </style>

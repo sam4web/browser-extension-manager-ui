@@ -1,12 +1,15 @@
 <script setup lang="ts">
   import useTheme from '../composables/useTheme';
+  import sunIcon from '@/assets/images/icon-sun.svg';
+  import moonIcon from '@/assets/images/icon-moon.svg';
+
   const { isDark, toggleTheme } = useTheme();
 </script>
 
 <template>
   <button @click="toggleTheme">
     <img
-      :src="isDark ? '/images/icon-sun.svg' : '/images/icon-moon.svg'"
+      :src="isDark ? sunIcon : moonIcon"
       alt="theme-toggler-icon"
     />
   </button>

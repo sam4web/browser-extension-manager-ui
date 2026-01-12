@@ -43,12 +43,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
   }
 
   .extension-list {
     display: grid;
-    gap: 12px;
+    gap: 15px;
     grid-template-columns: repeat(3, 1fr);
   }
 </style>

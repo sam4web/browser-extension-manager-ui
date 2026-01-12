@@ -1,12 +1,13 @@
 <script setup lang="ts">
   import ThemeToggler from './ThemeToggler.vue';
+  import logo from '@/assets/images/logo.svg';
 </script>
 
 <template>
   <nav>
     <div class="logo">
       <img
-        src="/images/logo.svg"
+        :src="logo"
         alt="logo-image"
       />
       <p>Extensions</p>

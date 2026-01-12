@@ -64,9 +64,10 @@ button {
   color: var(--neutral-100);
   background-color: var(--neutral-700);
   font-size: 16px;
-  padding: 7px 16px;
+  padding: 8px 16px;
   border: 1px solid var(--neutral-600);
   border-radius: 50px;
+  cursor: pointer;
 }
 
 button.active {
@@ -74,4 +75,16 @@ button.active {
   color: var(--neutral-900);
   font-weight: 500;
   border-color: var(--red-400);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
