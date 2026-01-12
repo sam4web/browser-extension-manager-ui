@@ -22,7 +22,7 @@ export const useExtensionStore = defineStore('extension', () => {
     );
     extensions.value = data.map((ext: IExtension) => ({
       ...ext,
-      isActive: extensionMap.has(ext.id) ? extensionMap.get(ext.id) : ext.isActive,
+      isActive: extensionMap.get(ext.id) ?? ext.isActive,
     }));
   }
 
