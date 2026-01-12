@@ -24,6 +24,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    outline-offset: 2px;
+    outline: 2px solid transparent;
     background-color: var(--neutral-700);
+    transition:
+      background-color 260ms linear,
+      outline-color 200ms linear;
+  }
+
+  button:focus,
+  button:hover {
+    background-color: var(--neutral-600);
+  }
+
+  button:focus {
+    outline-color: var(--red-500);
   }
 </style>

@@ -24,6 +24,7 @@
         <input
           type="checkbox"
           class="sr-only"
+          :checked="extension.isActive"
         />
         <div class="checkbox-box">
           <div class="checkbox-dot"></div>
@@ -61,7 +62,9 @@
   }
 
   .extension-item .content-container p {
+    font-weight: 400;
     font-size: 16px;
+    line-height: 24px;
     color: var(--neutral-300);
   }
 
@@ -75,7 +78,24 @@
 
   .extension-item button {
     background-color: transparent;
-    padding: 7px 15px;
+    padding: 8px 15px;
+    transition:
+      color 200ms linear,
+      border-color 200ms linear,
+      background-color 240ms,
+      outline-color 180ms linear;
+  }
+
+  .extension-item button:hover {
+    background-color: var(--red-400);
+    color: var(--neutral-900);
+    font-weight: 500;
+    border-color: var(--red-400);
+  }
+
+  button:focus {
+    background-color: var(--neutral-600);
+    outline-color: var(--red-500);
   }
 
   .checkbox-wrapper {
@@ -87,15 +107,22 @@
   .checkbox-box {
     padding: 2px 3px;
     width: 40px;
-    height: 23px;
+    height: 23.5px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: start;
     background-color: var(--neutral-600);
+    outline-offset: 2px;
+    outline: 2px solid transparent;
     transition:
-      background-color 300ms linear,
+      background-color 260ms linear,
+      outline-color 200ms linear,
       justify-content 270ms linear;
+  }
+
+  .checkbox-wrapper:focus-within .checkbox-box {
+    outline-color: var(--red-500);
   }
 
   .checkbox-dot {

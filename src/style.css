@@ -68,6 +68,20 @@ button {
   border: 1px solid var(--neutral-600);
   border-radius: 50px;
   cursor: pointer;
+  outline-offset: 2px;
+  outline: 2px solid transparent;
+  transition:
+    background-color 260ms linear,
+    outline-color 200ms linear;
+}
+
+button:focus,
+button:hover {
+  background-color: var(--neutral-600);
+}
+
+button:focus {
+  outline-color: var(--red-500);
 }
 
 button.active {
@@ -75,6 +89,10 @@ button.active {
   color: var(--neutral-900);
   font-weight: 500;
   border-color: var(--red-400);
+}
+
+button.active:focus {
+  outline-color: var(--red-400);
 }
 
 .sr-only {
