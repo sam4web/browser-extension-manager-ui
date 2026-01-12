@@ -35,10 +35,9 @@ Users should be able to:
 - Solution URL: [Frontend Mentor Solution]()
 - Live Site URL: [Github Pages]()
 
-
 ## Built with
 
-- [Vue](https://vuejs.org/) 
+- [Vue](https://vuejs.org/)
 - TypeScript
 - Semantic HTML5 markup
 - CSS custom properties
