@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import useTheme from '../composables/useTheme';
+  import { useTheme } from '../composables/useTheme';
   import sunIcon from '@/assets/images/icon-sun.svg';
   import moonIcon from '@/assets/images/icon-moon.svg';
 
@@ -7,7 +7,10 @@
 </script>
 
 <template>
-  <button @click="toggleTheme">
+  <button
+    @click="toggleTheme"
+    class="theme-toggle-button"
+  >
     <img
       :src="isDark ? sunIcon : moonIcon"
       alt="theme-toggler-icon"
@@ -16,7 +19,7 @@
 </template>
 
 <style scoped>
-  button {
+  .theme-toggle-button {
     border: none;
     outline: none;
     padding: 12px;
@@ -33,25 +36,29 @@
       outline-color 200ms linear;
   }
 
-  .dark button {
+  .dark .theme-toggle-button {
     background-color: var(--neutral-700);
   }
 
-  button:focus,
-  button:hover {
+  .theme-toggle-button:hover {
+    opacity: 95%;
+  }
+
+  .theme-toggle-button:focus,
+  .theme-toggle-button:hover {
     background-color: var(--neutral-300);
   }
 
-  .dark button:focus,
-  .dark button:hover {
+  .dark .theme-toggle-button:focus,
+  .dark .theme-toggle-button:hover {
     background-color: var(--neutral-600);
   }
 
-  button:focus {
+  .theme-toggle-button:focus {
     outline-color: var(--red-400);
   }
 
-  .dark button:focus {
+  .dark .theme-toggle-button:focus {
     outline-color: var(--red-500);
   }
 </style>

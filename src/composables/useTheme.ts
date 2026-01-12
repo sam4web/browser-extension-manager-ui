@@ -1,6 +1,6 @@
 import { ref, onMounted, onUnmounted, watch, computed } from 'vue';
 
-export default function useTheme() {
+export function useTheme() {
   const STORAGE_KEY = 'user-theme-preference';
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 

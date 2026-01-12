@@ -1,9 +1,28 @@
 <script setup lang="ts">
   import { type IExtension } from '@/types/extension';
+  import { ref, watchEffect } from 'vue';
 
-  const { extension } = defineProps<{
+  const props = defineProps<{
     extension: IExtension;
   }>();
+
+  const emit = defineEmits<{
+    (e: 'toggle-extension', id: string): void;
+    (e: 'hide-extension', id: string): void;
+  }>();
+
+  const isActive = ref(props.extension.isActive);
+  watchEffect(() => {
+    isActive.value = props.extension.isActive;
+  });
+
+  function handleToggle() {
+    emit('toggle-extension', props.extension.id);
+  }
+
+  function handleHide() {
+    emit('hide-extension', props.extension.id);
+  }
 </script>
 
 <template>
@@ -19,12 +38,13 @@
       </div>
     </div>
     <div class="lower-container">
-      <button>Remove</button>
+      <button @click="handleHide">Remove</button>
       <label class="checkbox-wrapper">
         <input
           type="checkbox"
           class="sr-only"
-          :checked="extension.isActive"
+          v-model="isActive"
+          @change="handleToggle"
         />
         <div class="checkbox-box">
           <div class="checkbox-dot"></div>
@@ -37,12 +57,23 @@
 <style scoped>
   .extension-item {
     font-size: 16px;
-    padding: 8px 18px;
+    padding: 16px 18px;
     border: 1px solid var(--neutral-100);
     box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 1.5px 1px;
     color: var(--neutral-800);
     border-radius: 16px;
     background-color: var(--neutral-0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 54px;
+  }
+
+  @media screen and (max-width: 1025px) {
+    .extension-item {
+      gap: 25px;
+      padding: 14px;
+    }
   }
 
   .dark .extension-item {
@@ -53,11 +84,12 @@
 
   .extension-item .upper-container {
     display: flex;
-    gap: 18px;
+    align-items: start;
+    gap: 16px;
   }
 
   .extension-item .content-container {
-    margin-top: 8px;
+    flex: 1;
   }
 
   .extension-item .content-container h3 {
@@ -79,8 +111,6 @@
   }
 
   .extension-item .lower-container {
-    margin-top: 62px;
-    margin-bottom: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
